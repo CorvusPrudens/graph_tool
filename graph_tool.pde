@@ -6,21 +6,21 @@ PImage icon;
 PImage icon2;
 
 String pfile = "output/points.json";
-String step_pfile = "output/points_step.json";
+String step_pfile = "output/curves.json";
 
 void setup() {
   size(1000, 800);
   icon = loadImage("icon.png");
   icon2 = loadImage("upload_icon.png");
-  
-  graph = new Graph((width - gsize) / 2.0, (height - gsize) / 2.0, gsize);
+
+  graph = new Graph((width - gsize) / 2.0, (height - gsize) / 2.0, gsize, 20);
 }
 
 void draw() {
   background(42);
   graph.draw(pressed);
   clearButton(width - 75, height - 75, 50, graph, pressed);
-  
+
   int save = circleButton(width - 150, height - 75, 50, 0, color(80), pressed);
   if (save == 1) {
     graph.save(pfile, step_pfile);
