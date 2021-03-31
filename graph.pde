@@ -286,11 +286,11 @@ class Graph {
     }
   }
   
-  void save(String file) {
+  void save(String file1, String file2) {
     JSONObject output = lines2json(this.lines);
-    saveJSONObject(output, file);
+    saveJSONObject(output, file1);
     output = lines2json_step(this.lines, 100, this.axes, this.axesStart);
-    saveJSONObject(output, "stepped_" + file);
+    saveJSONObject(output, file2);
   }
   
   void load(String file) {

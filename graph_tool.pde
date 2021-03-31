@@ -5,7 +5,8 @@ int pressed = 0;
 PImage icon;
 PImage icon2;
 
-String pfile = "points.json";
+String pfile = "output/points.json";
+String step_pfile = "output/points_step.json";
 
 void setup() {
   size(1000, 800);
@@ -22,7 +23,7 @@ void draw() {
   
   int save = circleButton(width - 150, height - 75, 50, 0, color(80), pressed);
   if (save == 1) {
-    graph.save(pfile);
+    graph.save(pfile, step_pfile);
   }
   image(icon, width - 150 - 12, height - 75 - 12, 25, 25);
   int load = circleButton(width - 225, height - 75, 50, 0, color(80), pressed);
